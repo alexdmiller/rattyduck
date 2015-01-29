@@ -1,0 +1,44 @@
+body {
+  font-size: 12px;
+  overflow: hidden;
+}
+
+.settings-pane {
+  z-index: 100;
+  position: absolute;
+  right: 0px;
+}
+
+.previous-button, .next-button {
+  width: 100px;
+  text-align: center;
+  background-color: #000;
+  z-index: 100;
+  display: none;
+}
+
+.previous-button:hover, .next-button:hover {
+  background-color: #FFF;
+  color: #000;
+  cursor: pointer;
+}
+
+.arrow {
+  font-size: 50px;
+  font-weight: bold;
+}
+
+.previous-button {
+  left: 50px;
+}
+
+.next-button {
+  right: 50px;
+}
+
+#click-message {
+  z-index: 100;
+  font-size: 15px;
+  background-color: #1F1F1F;
+  padding: 10px;
+}

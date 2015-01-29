@@ -1,0 +1,35 @@
+.settings-pane {
+  background-color: #333;
+  padding: 20px;
+  color: #CCC;
+  display: none;
+}
+
+.preset-dropdown {
+  font-size: 15px;
+  color: #CCC;
+  background: transparent;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  width: 100%;
+}
+
+.settings-pane .controllers {
+  margin-top: 10px;
+  display: table;
+}
+
+.settings-pane .controllers .control {
+  display: table-row;
+}
+
+.control label, .control input, .control output {
+  display: table-cell;
+  margin: 5px 10px;
+}
+
+.control output {
+  width: 50px;
+  text-align: right;
+}

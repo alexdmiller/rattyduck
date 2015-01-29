@@ -1,0 +1,53 @@
+body {
+  font-family: "AtlasTypewriterRegular", "Andale Mono", "Consolas", "Lucida Console", "Menlo", "Luxi Mono", monospace;
+  margin: 0;
+  background-color: #000;
+  color: #FFF;
+}
+
+.header {
+  position: absolute;
+  background-color: #1F1F1F;
+  width: 100%;
+  z-index: 100;
+  text-align: center;
+}
+
+#rattyduck {
+  position: absolute;
+  left: 0;
+  margin: 10px;
+}
+
+#rattyduck a {
+  padding: 3px;
+  border-radius: 5px;
+  font-size: 14px;
+  color: #000;
+  background-color: #FFEA4D;
+}
+
+#settings-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+  background-color: #333;
+  padding: 10px;
+}
+
+#settings-button:hover {
+  background-color: #FFF;
+  color: #000;
+}
+
+#settings-button a {
+  color: #FFF;
+}
+
+#title {
+  margin-left: 20px;
+  font-weight: bold;
+  font-size: 15px;
+  padding: 10px;
+}
