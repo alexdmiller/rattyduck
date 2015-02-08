@@ -1,7 +1,8 @@
 #top {
   width: 100%;
-  height: 100%;
+  height: 400px;
   position: relative;
+  margin-bottom: 100px;
 }
 
 #big-title {
@@ -9,19 +10,22 @@
   margin-left: auto;
   margin-right: auto;
   top: 40%;
+
+  z-index: 100;
 }
 
 #big-title div {
   display: inline-block;
   position: relative;
   font-size: 100px;
+  font-family: "AtlasTypewriterRegular", "Andale Mono", "Consolas", "Lucida Console", "Menlo", "Luxi Mono", monospace;
   font-weight: bold;
   color: #FFEA4D;
+  letter-spacing: 10px;
 }
 
 #intro {
   border-top: 1px solid #333;
-  border-bottom: 1px solid #333;
   padding: 30px;
   text-align: center;
   width: 500px;
@@ -32,50 +36,67 @@
 
 
 #container {
-  max-width: 1000px;
+  max-width: 1420px;
   margin-left: auto;
   margin-right: auto;
   padding: 0;
+  text-align: center;
 }
 
 #intro p {
   margin: 0;
 }
 
-h2, h3 {
-  text-align: center;
-  font-weight: normal;
-}
-
-h2 {
-  text-transform: uppercase;
-  margin: 60px;
-  font-family: 'Roboto Slab', serif;
-  font-size: 3em;
-}
-
-.category {
-  text-align: center;
-}
-
 .item {
-  width: 490px;
-  height: 300px;
+  height: 400px;
+  margin-bottom: 50px;
+  width: 700px;
+  position: relative;
+  border: 1px solid #000;
   display: inline-block;
-  margin: 0;
 }
 
-.item .image {
-  width: 490px;
-  height: 250px;
-  border: 1px solid #333;
+.item:hover {
+  border: 1px solid #FFF;
+}
+
+.item:hover .description {
+  background-color: #FFF;
+  color: #000;
+}
+
+.item .description {
+  width: 300px;
+  height: 100px;
+  background-color: #000;
+  position: absolute;
+  top: 150px;
+  left: 200px;
+  text-align: center;
 }
 
 .item h3 {
-  width: 490px;
-  height: 50px;
-  margin: 5px 0;
-  padding: 0;
-  font-size: 1em;
+  font-family: 'Roboto Slab', serif;
+  font-size: 25px;
+  margin: 0 0 10px 0;
+}
+
+.type, .date {
+  font-size: 14px;
+  text-transform: uppercase;
+  background-color: #333;
   color: #999;
+  padding: 1px;
+}
+
+.item p {
+  font-size: 12px;
+  color: #333;
+  margin: 5px;
+  font-style: italic;
+}
+
+a {
+  text-decoration: none;
+  color: #FFF;
 }

@@ -8,31 +8,78 @@ var cards = {
   bed: {
     background: 'bed.jpg',
     links: [
-      createLink(100, 100, 400, 400, 'middle')
+      createLink(0, 0, 450, 350, 'middle'),
+      createLink(450, 0, 200, 350, 'door')
     ]
   },
   middle: {
-    background: 'middle.jpg'
+    background: 'middle.jpg',
+    links: [
+      createLink(650, 0, 150, 600, 'door'),
+      createLink(0, 0, 150, 600, 'middleleft'),
+      createLink(100, 0, 300, 300, 'closet'),
+    ]
   },
   door: {
-    background: 'door.jpg'
+    background: 'door.jpg',
+    links: [
+      createLink(0, 500, 800, 100, 'middle')
+    ]
+  },
+  middleleft: {
+    background: 'middle-left.jpg',
+    links: [
+      createLink(650, 0, 150, 600, 'middle'),
+      createLink(0, 0, 150, 600, 'desk'),
+    ]
+  },
+  desk: {
+    background: 'desk.jpg',
+    links: [
+      createLink(650, 0, 150, 600, 'middleleft'),
+    ]
+  },
+  closet: {
+    background: 'closet.jpg',
+    links: [
+      createLink(0, 500, 800, 100, 'middle'),
+    ]
   }
 }
 
-function createLink(x, y, w, h, cardName) {
+function createLink(x, y, w, h, cardName, animation) {
   var graphics = new PIXI.Graphics();
   graphics.beginFill(0xFF0000);
   graphics.drawRect(0, 0, w, h);
-  graphics.alpha = 0;
   graphics.x = x;
   graphics.y = y;
+  graphics.alpha = 0.0;
 
   graphics.interactive = true;
   graphics.mousedown = function() {
-    gotoCard(cardName);
+    if (animation) {
+      stage.removeChildren();
+      stage.addChild(animation);
+      animation.play();
+      animation.onComplete = function() {
+        gotoCard(cardName);
+      };
+    } else {
+      gotoCard(cardName);
+    }
   };
 
   return graphics;
+}
+
+function createAnimation(images) {
+  var textures = $.map(images, function(name) {
+    return PIXI.Texture.fromImage(name);
+  });
+  var animation = new PIXI.MovieClip(textures);
+  animation.animationSpeed = 0.2;
+  animation.loop = false;
+  return animation;
 }
 
 function gotoCard(cardName) {
@@ -51,10 +98,7 @@ function gotoCard(cardName) {
 }
 
 function onClick(e) {
-  console.log(e);
-  // $.each(currentCard.links, function(i, link) {
-  //   link.polygon.contains();
-  // });
+
 }
 
 function gatherAssets() {
@@ -94,11 +138,9 @@ function startGame() {
 }
 
 function animate() {
-
-  requestAnimFrame( animate );
-
   // render the stage
   renderer.render(stage);
+  requestAnimFrame(animate);
 }
 
 $(document).ready(main);

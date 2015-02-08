@@ -453,10 +453,12 @@ function main() {
   $('.previous-button').click(function() {
     settingsControl.previousPreset();
   });
+  $('.previous-button').hide();
   centerVertically($('.previous-button'));
   $('.next-button').click(function() {
     settingsControl.nextPreset();
   });
+  $('.next-button').hide();
   centerVertically($('.next-button'));
 
   center($('#click-message'));

@@ -1,5 +1,5 @@
 (function() {
-  var bigTitleText = "RATTYDUCK";
+  var bigTitleText = "ratty duck";
   var offset = 1000;
   var velocityOffset = 400;
   var letterForce = 0.001;
@@ -12,6 +12,8 @@
       letter.text(bigTitleText.slice(i, i+1));
       letter.css('top', 0);
       letter.css('left', 0);
+      letter.width(50);
+      letter.css('text-align', 'center');
       $('#big-title').append(letter);
       letters.push({
         e: letter,
